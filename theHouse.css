@@ -1,0 +1,99 @@
+.buttons
+{
+  border: none;
+  color: white;
+  background-color: black;
+  margin: 0;
+}
+.buttons:hover
+{
+  color: black;
+  background-color: white;
+}
+.obj
+{
+  position: absolute;
+  border: none;
+  color: white;
+  background-color: blue;
+  margin: 0;
+  width: 65px;
+  height: 65px;
+  top: 47.5%;
+  left: 47.5%;
+}
+.obj:hover
+{
+  color: blue;
+  background-color: white;
+}
+span
+{
+  position: absolute;
+  font-size: 3em;
+  bottom: 91%;
+  left: 1%;
+}
+#border
+{
+  position: absolute;
+  border: 5px solid black;
+  width: 89.3%;
+  height: 78.7%;
+  top: 10%;
+  left: 5%;
+}
+#inventory
+{
+  position: absolute;
+  font-size: 1.5em;
+  bottom: 91%;
+  left: 55%;
+}
+#message
+{
+  position: absolute;
+  font-size: 1.5em;
+  bottom: 2%;
+  left: 55%;
+}
+.up
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  bottom: 90%;
+  left: 47.5%;
+}
+.right
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  left: 95%;
+  top: 47.5%;
+}
+.down
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  top: 90%;
+  left: 47.5%;
+}
+.left
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  top: 47.5%;
+  right: 95%;
+}
+.center
+{
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  top: 47.5%;
+  left: 47.5%;
+}
