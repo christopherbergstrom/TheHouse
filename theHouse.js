@@ -1,3 +1,4 @@
+var container;
 var downCenter;
 var downNorth;
 var downEast;
@@ -14,7 +15,7 @@ var basement;
 var tunnel;
 var div;
 var body = document.querySelector("body");
-var span;
+// var location;
 var border;
 var inventory;
 var message;
@@ -29,25 +30,27 @@ var saw;
 
 window.onload = function()
 {
+  container = document.getElementById("container");
   inventory = document.createElement("span");
   inventory.setAttribute("id", "inventory");
   inventory.innerHTML="Inventory: ";
-  body.appendChild(inventory);
+  container.appendChild(inventory);
   message = document.createElement("span");
   message.setAttribute("id", "message");
-  body.appendChild(message);
+  container.appendChild(message);
   border = document.createElement("div");
   border.setAttribute("id", "border");
-  body.appendChild(border);
+  container.appendChild(border);
   createDownCenter();
 };
 
 function createDownCenter()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Downstairs Center Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Downstairs Center Room";
   downNorth = document.createElement("button");
   downNorth.setAttribute("class", "up buttons");
   downNorth.innerHTML="Down North";
@@ -68,7 +71,7 @@ function createDownCenter()
   div.appendChild(downSouth);
   div.appendChild(downWest);
   div.appendChild(upStairs);
-  div.appendChild(span);
+  // div.appendChild(span);
   downNorth.addEventListener("click", function()
   {
     messageCheck();
@@ -110,9 +113,10 @@ function createDownCenter()
 function createDownNorth()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Downstairs North Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Downstairs North Room";
   downCenter = document.createElement("button");
   downCenter.setAttribute("class", "down buttons");
   downCenter.innerHTML="Down Center";
@@ -130,7 +134,7 @@ function createDownNorth()
     });
   }
   div.appendChild(downCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   downCenter.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -140,9 +144,10 @@ function createDownNorth()
 function createDownEast()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Downstairs East Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Downstairs East Room";
   downCenter = document.createElement("button");
   downCenter.setAttribute("class", "left buttons");
   downCenter.innerHTML="Down Center";
@@ -151,7 +156,7 @@ function createDownEast()
   basement.innerHTML="Basement";
   div.appendChild(downCenter);
   div.appendChild(basement);
-  div.appendChild(span);
+  // div.appendChild(span);
   downCenter.addEventListener("click", function()
   {
     messageCheck();
@@ -187,9 +192,10 @@ function createDownEast()
 function createDownSouth()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Downstairs South Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Downstairs South Room";
   downCenter = document.createElement("button");
   downCenter.setAttribute("class", "up buttons");
   downCenter.innerHTML="Down Center";
@@ -207,7 +213,7 @@ function createDownSouth()
     });
   }
   div.appendChild(downCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   downCenter.addEventListener("click", function()
   {
     messageCheck();
@@ -218,9 +224,10 @@ function createDownSouth()
 function createDownWest()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Downstairs West Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Downstairs West Room";
   downCenter = document.createElement("button");
   downCenter.setAttribute("class", "right buttons");
   downCenter.innerHTML="Down Center";
@@ -238,7 +245,7 @@ function createDownWest()
     });
   }
   div.appendChild(downCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   downCenter.addEventListener("click", function()
   {
     messageCheck();
@@ -249,9 +256,10 @@ function createDownWest()
 function createUpCenter()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Upstairs Center Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Upstairs Center Room";
   upNorth = document.createElement("button");
   upNorth.setAttribute("class", "up buttons");
   upNorth.innerHTML="Up North";
@@ -272,7 +280,7 @@ function createUpCenter()
   div.appendChild(upSouth);
   div.appendChild(upWest);
   div.appendChild(downStairs);
-  div.appendChild(span);
+  // div.appendChild(span);
   upNorth.addEventListener("click", function()
   {
     if (inventory.innerHTML.indexOf("door key") != -1)
@@ -316,9 +324,10 @@ function createUpCenter()
 function createUpNorth()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Upstairs North Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Upstairs North Room";
   upCenter = document.createElement("button");
   upCenter.setAttribute("class", "down buttons");
   upCenter.innerHTML="Up Center";
@@ -336,7 +345,7 @@ function createUpNorth()
     });
   }
   div.appendChild(upCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   upCenter.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -346,9 +355,10 @@ function createUpNorth()
 function createUpEast()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Upstairs East Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Upstairs East Room";
   upCenter = document.createElement("button");
   upCenter.setAttribute("class", "left buttons");
   upCenter.innerHTML="Up Center";
@@ -366,7 +376,7 @@ function createUpEast()
     });
   }
   div.appendChild(upCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   upCenter.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -376,9 +386,10 @@ function createUpEast()
 function createUpSouth()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Upstairs South Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Upstairs South Room";
   upCenter = document.createElement("button");
   upCenter.setAttribute("class", "up buttons");
   upCenter.innerHTML="Up Center";
@@ -396,7 +407,7 @@ function createUpSouth()
     });
   }
   div.appendChild(upCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   upCenter.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -406,9 +417,10 @@ function createUpSouth()
 function createUpWest()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Upstairs West Room";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Upstairs West Room";
   upCenter = document.createElement("button");
   upCenter.setAttribute("class", "right buttons");
   upCenter.innerHTML="Up Center";
@@ -426,7 +438,7 @@ function createUpWest()
     });
   }
   div.appendChild(upCenter);
-  div.appendChild(span);
+  // div.appendChild(span);
   upCenter.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -436,9 +448,10 @@ function createUpWest()
 function createBasement()
 {
   div = document.createElement("div");
-  body.appendChild(div);
-  span = document.createElement("span");
-  span.innerHTML="Basement";
+  container.appendChild(div);
+  // span = document.createElement("span");
+  // span.setAttribute("class", "location");
+  // span.innerHTML="Basement";
   downEast = document.createElement("button");
   downEast.setAttribute("class", "center buttons");
   downEast.innerHTML="Down East";
@@ -447,7 +460,7 @@ function createBasement()
   tunnel.innerHTML="Tunnel";
   div.appendChild(downEast);
   div.appendChild(tunnel);
-  div.appendChild(span);
+  // div.appendChild(span);
   downEast.addEventListener("click", function()
   {
     div.parentNode.removeChild(div);
@@ -462,7 +475,7 @@ function createBasement()
       var success = document.createElement("span");
       success.setAttribute("class", "center");
       success.innerHTML="Escape!";
-      body.appendChild(success);
+      container.appendChild(success);
     }
     else if (inventory.innerHTML.indexOf("saw") === -1)
     {
