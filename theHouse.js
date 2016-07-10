@@ -1,4 +1,6 @@
+var BtnsContainer;
 var container;
+
 var downCenter;
 var downNorth;
 var downEast;
@@ -14,11 +16,16 @@ var downStairs;
 var basement;
 var tunnel;
 var div;
-var body = document.querySelector("body");
-// var location;
-var border;
+var body;
+
+var locationBtn;
+var inventoryBtn;
+var messageBtn;
+
+var location;
 var inventory;
 var message;
+
 var smallKey;
 var bigKey;
 var doorKey;
@@ -30,17 +37,28 @@ var saw;
 
 window.onload = function()
 {
+  body = document.querySelector("body");
   container = document.getElementById("container");
-  inventory = document.createElement("span");
-  inventory.setAttribute("id", "inventory");
-  inventory.innerHTML="Inventory: ";
-  container.appendChild(inventory);
-  message = document.createElement("span");
-  message.setAttribute("id", "message");
-  container.appendChild(message);
-  border = document.createElement("div");
-  border.setAttribute("id", "border");
-  container.appendChild(border);
+  btnsContainer = document.getElementById("btnsContainer");
+
+  // locationBtn = document.createElement("span");
+  // locationBtn.setAttribute("id", "locationBtn");
+  // locationBtn.setAttribute("class", "topBtns");
+  // locationBtn.innerHTML="Location";
+  // btnsContainer.appendChild(locationBtn);
+  //
+  // inventoryBtn = document.createElement("span");
+  // inventoryBtn.setAttribute("id", "inventoryBtn");
+  // inventoryBtn.setAttribute("class", "topBtns");
+  // inventoryBtn.innerHTML="Inventory";
+  // btnsContainer.appendChild(inventoryBtn);
+  //
+  // messageBtn = document.createElement("span");
+  // messageBtn.setAttribute("id", "messageBtn");
+  // messageBtn.setAttribute("class", "topBtns");
+  // messageBtn.innerHTML="Message";
+  // btnsContainer.appendChild(messageBtn);
+
   createDownCenter();
 };
 
@@ -473,7 +491,7 @@ function createBasement()
       div.parentNode.removeChild(div);
       inventory.parentNode.removeChild(inventory);
       var success = document.createElement("span");
-      success.setAttribute("class", "center");
+      success.setAttribute("class", "center escape");
       success.innerHTML="Escape!";
       container.appendChild(success);
     }

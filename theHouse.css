@@ -1,7 +1,35 @@
+#btnsContainer
+{
+  position: relative;
+  text-align: center;
+  /*display: inline-block;*/
+  /*border: 5px solid black;*/
+  width: 80vh;
+  /*width: 90%;*/
+  /*left: 10vh;*/
+  height: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topBtns
+{
+  display: inline-block;
+  width: 20vh;
+  border: 3px solid black;
+  border-radius: 8px;
+  font-size: 2em;
+  text-align: center;
+}
+.topBtns:hover
+{
+  border: 3px solid black;
+  font-size: 2em;
+}
 #container
 {
   position: relative;
-  margin-top: 10vh;
+  border: 5px solid black;
+  /*margin-top: 10vh;*/
   width: 80vh;
   height: 80vh;
   margin-left: auto;
@@ -36,33 +64,28 @@
   color: blue;
   background-color: white;
 }
-.location
+/*.location
 {
   position: absolute;
   font-size: 2em;
   top: 0%;
   left: 0%;
-}
-#border
-{
-  position: absolute;
-  border: 5px solid black;
-  width: 80vh;
-  height: 80vh;
-}
+}*/
 #inventory
 {
   position: absolute;
   font-size: 1.5em;
-  top: %;
-  left: 55%;
+  top: 0%;
+  margin-left: auto;
+  margin-right: auto;
 }
 #message
 {
   position: absolute;
   font-size: 1.5em;
-  bottom: 2%;
-  left: 55%;
+  top: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .up
 {
@@ -76,8 +99,8 @@
   position: absolute;
   width: 10%;
   height: 10%;
-  left: 90%;
-  top: 50%;
+  right: 0%;
+  top: 45%;
 }
 .down
 {
@@ -93,7 +116,7 @@
   width: 10%;
   height: 10%;
   top: 45%;
-  right: 90%;
+  left: 0%;
 }
 .center
 {
@@ -102,4 +125,8 @@
   height: 10%;
   top: 45%;
   left: 45%;
+}
+.escape
+{
+  font-size: 2em;
 }
