@@ -2,11 +2,7 @@
 {
   position: relative;
   text-align: center;
-  /*display: inline-block;*/
-  /*border: 5px solid black;*/
   width: 80vh;
-  /*width: 90%;*/
-  /*left: 10vw;*/
   height: 10vh;
   margin-left: auto;
   margin-right: auto;
@@ -40,10 +36,6 @@
   color: white;
   background-color: black;
 }
-.readme
-{
-  cursor: pointer;
-}
 #readme
 {
   position: fixed;
@@ -66,7 +58,8 @@
   -moz-transition: all .25s;
   -ms-transition: all .25s;
   transition: all .25s;
-  color: black !important;
+  color: black;
+  z-index: 1000;
 }
 #readmeExit:hover
 {
@@ -75,15 +68,14 @@
   -moz-transition: all .25s;
   -ms-transition: all .25s;
   transition: all .25s;
-  color: blue !important;
+  color: blue;
 }
 #readmeTitle
 {
   position: relative;
-  top: 15vw;
+  top: 15vh;
   left: 10vw;
   right: 10vw;
-  /*text-align: center;*/
   font-size: 4em;
   font-weight: bold;
 }
@@ -92,10 +84,10 @@
   position: absolute;
   left: 10vw;
   right: 10vw;
-  top: 25vw;
-  font-size: 3em;
+  top: 30vh;
+  font-size: 2em;
   text-align: left;
-  line-height: 150%;
+  line-height: 120%;
 }
 .buttons
 {
@@ -174,4 +166,34 @@
   font-size: 3em;
   text-align: center;
   font-weight: bold;
+}
+@media only screen and (max-device-width: 480px)
+{
+  #btnsContainer
+  {
+    width: 300px;
+    height: 40px;
+  }
+  #container
+  {
+    width: 300px;
+    height: 300px;
+  }
+  .topBtns
+  {
+    width: 90px;
+    font-size: 1em;
+  }
+  #readmeTitle
+  {
+    top: 10vh;
+    font-size: 3em;
+    line-height: 120%;
+  }
+  #readmeText
+  {
+    top: 35vh;
+    line-height: 100%;
+    font-size: 1.5em;
+  }
 }
