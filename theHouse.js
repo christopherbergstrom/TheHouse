@@ -61,8 +61,7 @@ $(document).ready(function()
   });
   $("#messageBtn").click(function()
   {
-    $("#messageBtn").css("color", "black");
-    $("#messageBtn").css("background-color", "white");
+    messageColorReset();
     $("body").append("<div id='readme'></div>").hide().fadeIn("slow");
     $("#readme").append("<div id='readmeExit' class='fa fa-times'></div>");
     $("#readme").append("<div id='readmeTitle'>Message</div>");
@@ -456,6 +455,7 @@ function createBasement()
       $("#current").remove();
       message="You escaped!";
       container.append("<div class='escape'>Escape!</div>")
+      messageColor();
       escape.play();
     }
     else if (inventory.indexOf("saw") === -1)
@@ -480,17 +480,23 @@ function locationColor()
 function inventoryColor()
 {
   $("#inventoryBtn").css("color", "white");
-  $("#inventoryBtn").css("background-color", "blue");
+  $("#inventoryBtn").css("background-color", "red");
 }
 function messageColor()
 {
   $("#messageBtn").css("color", "white");
-  $("#messageBtn").css("background-color", "blue");
+  $("#messageBtn").css("background-color", "green");
+}
+function messageColorReset()
+{
+  $("#messageBtn").css("color", "black");
+  $("#messageBtn").css("background-color", "white");
 }
 function messageCheck()
 {
   if (message)
   {
     message="";
+    messageColorReset();
   }
 }
