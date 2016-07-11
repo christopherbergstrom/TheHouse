@@ -7,10 +7,8 @@ var escape;
 var door;
 var walk;
 var smash;
-
-// var locationBtn;
-// var inventoryBtn;
-// var messageBtn;
+var info;
+var entered=false;
 
 var loc="Downstairs Center Room";
 var inventory="";
@@ -21,15 +19,18 @@ $(document).ready(function()
   body = $("body");
   container = $("#container");
   btnsContainer = $("#btnsContainer");
-  item = $("#item");
-  escape = $("#escape");
-  door = $("#door");
-  walk = $("#walk");
-  smash = $("#smash");
+  item = $("#item")[0];
+  // item = document.getElementById("item");
+  escape = $("#escape")[0];
+  door = $("#door")[0];
+  walk = $("#walk")[0];
+  smash = $("#smash")[0];
+  info = $("#info")[0];
   createDownCenter();
   $("#locationBtn").click(function()
   {
     $("#locationBtn").css("color", "black");
+    $("#locationBtn").css("background-color", "white");
     $("body").append("<div id='readme'></div>").hide().fadeIn("slow");
     $("#readme").append("<div id='readmeExit' class='fa fa-times'></div>");
     $("#readme").append("<div id='readmeTitle'>Location</div>");
@@ -45,6 +46,7 @@ $(document).ready(function()
   $("#inventoryBtn").click(function()
   {
     $("#inventoryBtn").css("color", "black");
+    $("#inventoryBtn").css("background-color", "white");
     $("body").append("<div id='readme'></div>").hide().fadeIn("slow");
     $("#readme").append("<div id='readmeExit' class='fa fa-times'></div>");
     $("#readme").append("<div id='readmeTitle'>Inventory</div>");
@@ -60,6 +62,7 @@ $(document).ready(function()
   $("#messageBtn").click(function()
   {
     $("#messageBtn").css("color", "black");
+    $("#messageBtn").css("background-color", "white");
     $("body").append("<div id='readme'></div>").hide().fadeIn("slow");
     $("#readme").append("<div id='readmeExit' class='fa fa-times'></div>");
     $("#readme").append("<div id='readmeTitle'>Message</div>");
@@ -102,7 +105,7 @@ function createDownCenter()
     }
     else
     {
-      item.play();
+      info.play();
       messageColor();
       message="This door is locked, a door key is needed.";
     }
@@ -180,25 +183,25 @@ function createDownEast()
     }
     else if (inventory.indexOf("big key") === -1)
     {
-      item.play();
+      info.play();
       message="This door is locked, a big key is needed.";
       messageColor();
     }
     else if (inventory.indexOf("flashlight") === -1 && inventory.indexOf("batteries") === -1)
     {
-      item.play();
+      info.play();
       message="I already unlocked the door, but it is too dark to see down there.";
       messageColor();
     }
     else if (inventory.indexOf("flashlight") != -1 && inventory.indexOf("batteries") === -1)
     {
-      item.play();
+      info.play();
       message="I already unlocked the door, but I don't have batteries for my flashlight and it is too dark to see down there.";
       messageColor();
     }
     else if (inventory.indexOf("flashlight") === -1 && inventory.indexOf("batteries") != -1)
     {
-      item.play();
+      info.play();
       message="I already unlocked the door, but I don't have a flashlight for my batteries and it is too dark to see down there.";
       messageColor();
     }
@@ -276,7 +279,7 @@ function createUpCenter()
     }
     else
     {
-      item.play();
+      info.play();
       messageColor();
       message="This door is locked, a door key is needed.";
     }
@@ -299,13 +302,23 @@ function createUpCenter()
   {
     if (inventory.indexOf("hammer") != -1)
     {
-      smash.play()
-      $("#current").remove();
-      createUpWest();
+      if (entered)
+      {
+        door.play()
+        $("#current").remove();
+        createUpWest();
+      }
+      else
+      {
+        entered=true;
+        smash.play()
+        $("#current").remove();
+        createUpWest();
+      }
     }
     else
     {
-      item.play();
+      info.play();
       messageColor();
       message="This door is locked from the inside, something is needed to smash off the door handle.";
     }
@@ -337,6 +350,32 @@ function createUpNorth()
     });
   }
   $(".down").click(function()
+  {
+    door.play();
+    messageCheck();
+    $("#current").remove();
+    createUpCenter();
+  });
+}
+function createUpEast()
+{
+  locationColor();
+  loc="Upstairs East Room";
+  container.append("<div id='current'></div>")
+  $("#current").append("<button class='left buttons'>Up Center</button>");
+  if (inventory.indexOf("batteries") === -1)
+  {
+    $("#current").append("<button class='obj'>batteries</button")
+    $(".obj").click(function()
+    {
+      item.play();
+      messageCheck();
+      inventory+="batteries, ";
+      $(".obj").remove();
+      inventoryColor();
+    });
+  }
+  $(".left").click(function()
   {
     door.play();
     messageCheck();
@@ -415,19 +454,19 @@ function createBasement()
     if (inventory.indexOf("saw") != -1 && inventory.indexOf("gloves") != -1)
     {
       $("#current").remove();
-      $("#btnsContainer").remove()
-      container.append("<div class='center escape'>Escape!</div>")
+      message="You escaped!";
+      container.append("<div class='escape'>Escape!</div>")
       escape.play();
     }
     else if (inventory.indexOf("saw") === -1)
     {
-      item.play();
+      info.play();
       messageColor();
       message="The tunnel is boarded shut, a saw is needed.";
     }
     else if (inventory.indexOf("gloves") === -1)
     {
-      item.play();
+      info.play();
       messageColor();
       message="The entrance to the tunnel is covered with spider webs and black widows, some gloves are needed.";
     }
@@ -435,15 +474,18 @@ function createBasement()
 }
 function locationColor()
 {
-  $("#locationBtn").css("color", "green");
+  $("#locationBtn").css("color", "white");
+  $("#locationBtn").css("background-color", "blue");
 }
 function inventoryColor()
 {
-  $("#inventoryBtn").css("color", "green");
+  $("#inventoryBtn").css("color", "white");
+  $("#inventoryBtn").css("background-color", "blue");
 }
 function messageColor()
 {
-  $("#messageBtn").css("color", "green");
+  $("#messageBtn").css("color", "white");
+  $("#messageBtn").css("background-color", "blue");
 }
 function messageCheck()
 {

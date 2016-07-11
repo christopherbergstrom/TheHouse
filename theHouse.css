@@ -6,10 +6,39 @@
   /*border: 5px solid black;*/
   width: 80vh;
   /*width: 90%;*/
-  /*left: 10vh;*/
+  /*left: 10vw;*/
   height: 10vh;
   margin-left: auto;
   margin-right: auto;
+}
+#container
+{
+  position: relative;
+  border: 5px solid black;
+  /*margin-top: 5vw;*/
+  width: 80vh;
+  height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topBtns
+{
+  display: inline-block;
+  width: 20vh;
+  border: 3px solid black;
+  border-radius: 8px;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+.topBtns:hover
+{
+  cursor: pointer;
+  border: 3px solid black;
+  font-size: 2em;
+  color: white;
+  background-color: black;
 }
 .readme
 {
@@ -32,7 +61,7 @@
   float: right;
   font-size: 5em;
   right: 5vw;
-  top: 5vh;
+  top: 5vw;
   -webkit-transition: all .25s;
   -moz-transition: all .25s;
   -ms-transition: all .25s;
@@ -46,12 +75,12 @@
   -moz-transition: all .25s;
   -ms-transition: all .25s;
   transition: all .25s;
-  color: #00e6ac !important;
+  color: blue !important;
 }
 #readmeTitle
 {
   position: relative;
-  top: 15vh;
+  top: 15vw;
   left: 10vw;
   right: 10vw;
   /*text-align: center;*/
@@ -63,38 +92,10 @@
   position: absolute;
   left: 10vw;
   right: 10vw;
-  top: 30vh;
+  top: 25vw;
   font-size: 3em;
   text-align: left;
-}
-.topBtns
-{
-  display: inline-block;
-  width: 20vh;
-  border: 3px solid black;
-  border-radius: 8px;
-  font-size: 2em;
-  text-align: center;
-  color: black;
-  background-color: white;
-}
-.topBtns:hover
-{
-  cursor: pointer;
-  border: 3px solid black;
-  font-size: 2em;
-  color: white;
-  background-color: black;
-}
-#container
-{
-  position: relative;
-  border: 5px solid black;
-  /*margin-top: 10vh;*/
-  width: 80vh;
-  height: 80vh;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 150%;
 }
 .buttons
 {
@@ -116,8 +117,8 @@
   color: white;
   background-color: blue;
   margin: 0;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   top: 45%;
   left: 45%;
 }
@@ -130,43 +131,47 @@
 .up
 {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   left: 45%;
 }
 .right
 {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   right: 0%;
   top: 45%;
 }
 .down
 {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   bottom: 0%;
   left: 45%;
 }
 .left
 {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   top: 45%;
   left: 0%;
 }
 .center
 {
   position: absolute;
-  width: 10%;
-  height: 10%;
+  width: 12%;
+  height: 12%;
   top: 45%;
   left: 45%;
 }
 .escape
 {
+  margin-top: 20vw;
+  width: 40vw;
   font-size: 3em;
+  text-align: center;
+  font-weight: bold;
 }
